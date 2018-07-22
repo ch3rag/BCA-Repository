@@ -31,7 +31,7 @@ void createHeap(int a[MAX], int n) {
 }
 
 void adjustHeap(int a[MAX], int n) {
-    int i, k;
+    int i;
     for (i = 0; i < n - 2; i++) {
         swap( & a[0], & a[n - i - 1]);
         createHeap(a, n - i - 1);
