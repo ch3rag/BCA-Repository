@@ -2,8 +2,12 @@
 // PARALLEL IO USING DELAYS AND CURSOR MOVEMENT
 // COMPATIBLE WITH TURBO C++
 
-#
-include < iostream.h > #include < conio.h > #include < fstream.h > #include < string.h > #include < dos.h > #define DELAY 100
+#include <iostream.h> 
+#include <conio.h> 
+#include <fstream.h> 
+#include <string.h> 
+#include <dos.h> 
+#define DELAY 100
 class INFO {
     public: void getDetails();
 };
