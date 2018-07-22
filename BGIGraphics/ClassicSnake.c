@@ -8,13 +8,13 @@
 #include <dos.h> 
 #include <time.h>
 
-    class Map {
-        int mapx;
-        int mapy;
-        public: void initmap();
-        public: void drawmap();
-        friend void run();
-    };
+class Map {
+    int mapx;
+    int mapy;
+    public: void initmap();
+    public: void drawmap();
+    friend void run();
+};
 
 void Map::initmap() {
     mapx = 300;
@@ -121,9 +121,9 @@ void Snake::drawsnake() {
 }
 
 void run() {
-    map m;
-    food f;
-    snake s;
+    Map m;
+    Food f;
+    Snake s;
     m.initmap();
     m.drawmap();
     f.generatefood();
@@ -154,9 +154,10 @@ void run() {
 }
 
 int main(int argc, char * argv[]) {
-    int gd = 0, gm;
+    int gd = DETECT, gm;
     initgraph( & gd, & gm, "C:\\TC\\BGI");
     srand(time(0));
     run();
+    closegraph();
     getch();
 }
