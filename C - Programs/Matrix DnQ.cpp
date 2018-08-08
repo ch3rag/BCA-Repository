@@ -6,14 +6,16 @@
 #include <cstdlib>
 #include <math.h>
 
- 
+int ** allocate(int order) {
+	int ** arr = (int **) calloc (order, sizeof(int *));
+	for(int i = 0 ; i < order ; i++) {
+		arr[i] = (int *) calloc (order, sizeof(int));
+	}
+	return arr;
+}
+
 int ** addMatrix(int ** a,  int ** b, int order) {
- 	 int ** cr = (int **) calloc (order, sizeof(int *));
- 	 
- 	 for(int i = 0 ; i < order ; i++) {
- 	 	cr[i] = (int *) calloc (order, sizeof(int));	
-	  }
-	  
+ 	 int ** cr = allocate(order);
 	 for(int i = 0 ; i < order ; i++) {
  		for(int j = 0 ; j < order ; j++) {
  			cr[i][j] = a[i][j] + b[i][j];
@@ -23,13 +25,7 @@ int ** addMatrix(int ** a,  int ** b, int order) {
 	 return cr;
 }
  
-int ** allocate(int order) {
-	int ** arr = (int **) calloc (order, sizeof(int *));
-	for(int i = 0 ; i < order ; i++) {
-		arr[i] = (int *) calloc (order, sizeof(int));
-	}
-	return arr;
-}
+
 void printMatrix(int ** mat, int order) {
 	for(int i = 0 ; i < order ; i++) {
 		for(int j = 0 ; j < order ; j++) {
