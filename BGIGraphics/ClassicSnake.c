@@ -1,6 +1,6 @@
 // CHIRAG SINGH RAJPUT
 // CLASSIC SNAKE GAME
-// BGI GRAPHICS
+
 
 #include <iostream> 
 #include <conio.h > 
