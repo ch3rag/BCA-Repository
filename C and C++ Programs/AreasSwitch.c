@@ -1,5 +1,6 @@
 // CHIRAG SINGH RAJPUT
 // AREAS OF CIRCLE, CYLINDER, TRIANGLE
+// SWITCH CASE
 
 #include <stdio.h> 
 #define pi 3.14
