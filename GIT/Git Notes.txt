@@ -8,7 +8,7 @@ Three states of file in GitHub
 2. Staged
 3. Commmit
 
-*** Commands ****
+*** Commands ***
 
 --Configuring the user name
 git config --global user.name "Chirag Singh"
@@ -53,14 +53,14 @@ git status
 git diff
 
 --Display what has been staged but not yet committed
-git diff -cached
+git diff --cached
 
 --Committing file(s)
 git commit
 
 This opens up editor consisting:
 > Commit Title
-> Commit Descriptikon
+> Commit Description
 > List of changes preceded by *
 > Closes-Bug: #Bug_Number (Bug Removed list)
 
