@@ -58,13 +58,10 @@ void updatestar() {
 
 void run() {
   while (1) {
-    if (kbhit())
-      exit(0);
-
+    if (kbhit()) exit(0);
     drawstars();
     updatestar();
     delay(40);
-
     cleardevice();
   }
 }
