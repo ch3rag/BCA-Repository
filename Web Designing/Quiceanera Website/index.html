@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>Quinceanera - Your Bakery</title>
+		<link rel="stylesheet" href="./css/styles.css" />
+	</head>
+	
+	<body class="satisfy">
+
+		<!--Navigation Bar-->
+		<nav class="flex flex-space-between">
+			<div class="one-third-width inline-flex flex-vertical small">
+				<span class="nav-button" id="home-btn">Home</span>
+				<span class="nav-button" id="login-btn">Login</span>
+				<span class="nav-button" id="signup-btn">SignUp</span>
+			</div>
+			<div class="one-third-width flex flex-vertical flex-horizontal white satisfy vlarge">Quinceanera</div>
+			<div class="one-third-width inline-flex flex-vertical small">
+				<span class="nav-button" id="menu-btn">Menu</span>
+				<span class="nav-button" id="about-btn">About</span>
+				<span class="nav-button" id="credits-btn">Credits</span>
+			</div>
+		</nav>
+
+		<!--Menu-->
+		<div id="menu" class="box full hide">
+			<div id="cat-bar" class="flex flex-space-between full-width">
+				<img class="active" src="./images/category/cake.png" />
+				<img src="./images/category/cookies.png" />
+				<img src="./images/category/cupcakes.png" />
+				<img src="./images/category/pastry.png" />
+				<img src="./images/category/pie.png" />
+			</div>
+		</div>
+
+		<!--About-->
+		<div id="about" class="box full hide">
+			<p class="satisfy medium text-center three-fourth-width center-horizontal">
+			In these days of mass production,it is rare to find a bakery that devotes itself to quality over quantity.
+			Quinceanera Bakery uses only quality ingredients. All of our cakes and other products are made from scratch with the finest ingredients,providing you with the product of the highest quality.<br />
+			Quinceanera Bakery's unique creations include traditional cakes,pastries,cookies,and pies. Every Quinceanera Bakery cake is a work of art and every product tastes as good as it looks.<br />
+			Quinceanera Bakery is a family owned business serving since 1998,and is now at Lucknow.<br />
+			</p>
+		</div>
+
+		<!--Background-->
+		<div id="image-slider">
+			<img class="show" src="./images/slider/1.jpg" />
+			<img class="hide" src="./images/slider/2.jpg" />
+			<img class="hide" src="./images/slider/3.jpg" />
+			<img class="hide" src="./images/slider/4.jpg" />
+			<img class="hide" src="./images/slider/5.jpg" />
+		</div>
+
+		<!--Footer-->
+		<footer class="flex flex-vertical flex-horizontal">
+				<hr>
+				<span class="satisfy large"><i>The Quinceanera Bakery</i></span>
+		</footer>
+
+		<!--Quote  Card-->
+		<div class="box show text-center flex flex-direction-column flex-space-between" id="quote-container">	
+			<p class="satisfy vlarge">"Let's Bake The World, A Better Place!"</p>
+			<hr class="spacer">
+			<p class="satisfy medium">The Quinceanera Bakery</p>
+		</div>
+		
+		<!--Login Card-->
+		<div id="login" class="box hide">
+			<form name="login" class="almost-full-width center-horizontal flex flex-direction-column flex-space-between">
+				<span class="rajdhani large">Login</span>
+				<hr>
+				<span class="rajdhani small">Username</span><br /><input type="text" name="username" class="full-width medium"><br />
+				<span class="rajdhani small">Password</span><br /><input type="password" name="password" class="full-width medium"><br />
+				<span class="rajdhani small"><a href="#">Forgot Password?</a></span><br />
+				<div class="button flex flex-horizontal flex-vertical medium one-third-width center-horizontal">Log In</div>
+			</form>
+		</div>
+		
+		<!--Sign Up Card-->
+		<div id="sign-up" class="box hide">
+			<form name="signUp" class="almost-full-width center-horizontal flex flex-direction-column flex-space-between">
+				<span class="rajdhani large">Sign Up</span>
+				<hr>
+				<p class="rajdhani vsmall">Username<span class="source-sans float-right vsmall">(at least 8 chars. Containing digits, alphabets, . and _)</span></p>
+				<input type="text" name="username" class="full-width small">
+				<p class="rajdhani vsmall">Gender</p>
+				<div id="gender" class="flex flex-vertical">
+					<input type="radio" name="gender" value="male" checked/><span class="small">Male</span>
+					<input type="radio" name="gender" value="female" /><span class="small">Female</span><br />
+				</div>
+				<p class="rajdhani vsmall">Password<span class="source-sans float-right vsmall">(at least 8 chars. Containing digits, alphabets, ., _ and @)</span></p>
+				<input type="password" name="password" class="full-width small"><br />
+				<p class="rajdhani vsmall">Retype Password</p>
+				<input type="password" name="retypePassword" class="full-width small"><br />
+				<p class="rajdhani vsmall">Email<span class="source-sans float-right vsmall">(must be valid)</span></p>
+				<input type="text" name="email" class="full-width small"> <br />
+				<p class="rajdhani vsmall">Date Of Birth<span class="source-sans float-right vsmall">(greater than 12 years)</span></p>
+				<input type="date" name="dob" class="half-width vsmall no-padding"/><br />
+				<div class="button inline-flex flex-horizontal flex-vertical small one-third-width center-horizontal" >Sign Up</div>
+			</form>
+		</div>
+
+		<!--Credits-->
+		<div id="credits" class="box hide flex flex-direction-column flex-space-between">
+			<h1>Credits</h1>
+			<hr class="spacer">
+			<p class="text-center satisfy vlarge">Bharat Singh Rajput</p>
+			<p  class="text-center satisfy vlarge">Saloni Singh</p>
+			<p  class="text-center source-sans medium">National P.G. College</p>
+			<p  class="text-center source-sans medium">Lucknow</p>
+		</div>
+		<script src="./js/script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,211 @@
+body {
+	margin: 0;
+}
+header {
+	height: 100px;
+	width: 100%;
+	overflow: hidden;
+	background-color: rgb(52, 52, 52);
+	position: fixed;
+	z-index: 9999;
+	top: 0;
+}
+
+#header-logo {
+	display: inline-flex;
+	align-items: center;
+	margin-left: 10px;
+	height: 100px;
+}
+
+#header-logo img {
+	filter: invert(100%);
+	height: 80px;
+}
+
+#header-logo span {
+	font-family: Rajdhani;
+	color: white;
+	font-size: 2.5em;
+}
+
+#button-container {
+	display: inline-flex;
+	justify-content: space-between;
+	float: right;
+	align-items: center;
+	height: 100px;
+	margin-right: 20px;
+	
+}
+
+#button-container span {
+	font-family: Rajdhani;
+	font-size: 1.5em;
+	color: white;	
+	width: 100px;
+	background-color: rgb(152, 152, 152);
+	text-align: center;
+	padding: 10px;
+	transition-duration: 0.5s;
+}
+#button-container span:hover {
+	background: #00adfa;
+	color: black;
+}	
+
+#image-slider {
+	height: 400px;
+	width: 100%;
+	background: red;
+	margin-top: 100px;
+}
+
+#image-slider img {	
+	height: inherit;
+	width: 100%;
+	position: absolute;
+	display: block;
+	transition-duration: 0.5s;
+}
+
+img.hide {
+	opacity: 0;
+}
+img.show {
+	opacity: 100;
+}
+
+#quote-container {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 2.5em;
+	font-family: Satisfy;
+}
+#quote-container span { font-size: 0.5em; }
+
+#quote-container hr {
+	border-color: #00adfa;
+	width: 50%;
+	border-width: 2px;
+}
+
+#card-container {
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-between;
+}
+
+div.card {
+	width: 320px;
+	height: 350px;
+	background-color: #00adfa;
+	box-shadow: 0px 0px 10px black;
+	color: white;
+	font-family: "Roboto";
+	text-align: center;
+	display: inline-block;
+	margin: 2.5%;
+
+}
+
+div.card hr {
+	border-color: white;
+	width: 90%;
+}
+
+
+.card-header {
+	font-family: "Source Sans Pro";
+	font-size: 3em;
+}
+
+.card-text {
+	font-family: "Rajdhani";
+	margin-top: 10px;
+	font-size: 1.5em;
+	text-align: center;
+}
+
+.card-button {
+	background-color: #057195;
+	width: 80%;
+	padding: 10px;
+	margin: 20px auto;
+	text-align: center;
+	cursor: pointer;
+}
+
+
+
+div.spacer {
+	min-height: 100px;
+}
+
+#form-container {
+	width: 100%;
+	display: flex;
+}
+
+#join {
+	color: #00adfa;
+	font-size: 3em;
+	font-family: "Rajdhani";
+	margin-left: 20px;
+}
+#form {
+	width: 50%;
+	border-right: 2px solid  black;
+	margin-left: 20px;
+	font-family: "Source Sans Pro";
+	font-size: 1.5em;	
+	display: inline-block;
+}
+
+#form input {
+	margin: 10px 0;
+	width: 90%;
+	border: 2px solid #00adfa;
+	border-radius: 5px;
+}
+
+button {
+	background-color: #00adfa;
+	padding: 10px 20px;
+	margin: 20px 10px;
+	font-family: "Rajdhani";
+	color: white;
+	border-radius: 5px;
+	font-size: 1.2em;
+	
+}
+
+#form-text {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 50%;
+}
+#form-text span {
+	color: #00adfa;
+	margin-left: 50px;
+	width: 30%;
+	height: 80%;
+	font-family: "Rajdhani";
+	font-size: 3em;
+}
+
+
+footer {
+	background-color: rgb(52, 52, 52);
+	height: 100px;
+	color: white;
+	font-family: satisfy;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2em;
+	
+}
+
+

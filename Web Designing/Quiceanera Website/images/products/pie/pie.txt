@@ -1,0 +1,14 @@
+Apple Pie	350
+Blueberry Pie	450
+Boston Cream Pie	350
+Butter Milk Pie	300
+Cherry Pie	330
+Chocolate Cream Pie	410
+Coconut Cream Pie	320
+Hedgehog Cream Pie	450
+Key Lime Pie	450
+Lemon Meringue Pie	460
+Mississippi Mud Pie	510
+Pecan Pie	430
+Rhubarb Pie	490
+Strawberry Pie	450

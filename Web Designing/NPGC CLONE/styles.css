@@ -1,0 +1,118 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+.top-bar {
+	width: 100%;
+	height: 50px;
+	background-color: #2F506C;
+}
+
+#time {
+	color: #B5CBDB;
+	font-size: small;
+	font-family: "Trebuchet MS";
+}
+.logo-image {
+	width: 70px;
+	height: 70px;
+}
+
+.img-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	margin-left: 50px;
+	
+}
+
+.menu-banner-item {
+	display: inline-block;
+	padding: 0px 8px;
+	color: gray;
+	font-family: "Trebuchet MS";
+	font-weight: lighter;
+	font-size: small;
+}
+
+.menu-banner {
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+	
+	
+}
+.logo-text {
+	text-align: center;
+	display: inline-block;
+	margin-left: 140px;
+	margin-top: 20px;
+}
+
+.divider {
+	height: 10px;
+	width: 1px;
+	display: inline-block;
+	background-color: gray;
+}
+.main-logo-text {
+	color: #75A5D2;
+	font-family: "Arial";
+	font-weight: bolder;
+}
+
+.sub1-logo-text {
+	color: #369C36;
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 80%;
+}
+
+.sub2-logo-text {
+	color: #FF770F;
+	font-family: "Arial";
+	font-weight: bold;
+	font-size: 80%;
+}
+
+.banner {
+	width: 100%;
+	height: 100px;
+	background-color: white;
+	position: relative;
+}
+
+#icon {
+	display: inline-block;
+	color: #5E7384;
+	background-color: #27435A;
+	width: 25px;
+	height: 25px;
+	border-radius: 25px;
+	text-align: center;
+	line-height: 25px;
+	margin: 0px 3px;
+	font-size: large;
+	transition-duration: 0.5s;
+}
+
+#icon:hover {
+	background-color: #5F90B9;
+	color: #E7EEF5;
+}
+
+.icon-group {
+	top: 50%;
+	transform: translateY(50%);
+	margin-left: 20px;
+}
+.navbar-time {
+	float: right;
+	top: 50%;
+	transform: translateY(20%);
+	margin-right: 50px;
+}
