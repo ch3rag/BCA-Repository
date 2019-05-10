@@ -1,4 +1,4 @@
-window.onload = function() {
+window.onload = function () {
 	changeImages();
 	setupButtons();
 	loadMenu();
@@ -10,7 +10,7 @@ function changeImages() {
 	let i = 0;
 	setInterval(() => {
 		images[i].className = "hide";
-		i = (i + 1)%images.length;
+		i = (i + 1) % images.length;
 		images[i].className = "show";
 	}, 2000);
 }
@@ -24,7 +24,7 @@ function setupButtons() {
 	const about = document.querySelector("#about-btn");
 	const aboutBox = document.querySelector("#about");
 	const quoteBox = document.querySelector("#quote-container");
-	const signUpBox =  document.querySelector("#sign-up");
+	const signUpBox = document.querySelector("#sign-up");
 	const menu = document.querySelector("#menu-btn");
 	const menuBox = document.querySelector("#menu");
 	const credits = document.querySelector("#credits-btn");
@@ -48,7 +48,7 @@ function setupButtons() {
 }
 
 function loadMenu() {
-	const menu = ["cake","cookies","cupcakes","pastry","pie"];
+	const menu = ["cake", "cookies", "cupcakes", "pastry", "pie"];
 	const pie = ["Apple Pie", "Blueberry Pie", "Boston Cream Pie", "Butter Milk Pie", "Cherry Pie", "Chocolate Cream Pie", "Coconut Cream Pie", "Hedgehog Cream Pie"];
 	const cake = ["Chocolate Cheese Cake", "Special Vanilla Cake", "Creamy Vanilla Fruit Cake", "Rasmalai Cake", "Chocolate Paan Cake", "Chocolate Creamy Cake", "Mango Cream Cake", "Furbished Choco ButterScotch"];
 	const cookies = ["Oats Cookies", "Milk Kaju Cookies", "Marble Cookies", "Dry Fruit Cookies", "Chocolate Kaju Cookies", "Choco Chip Cookies", "Milk Pista Cookies", "Suger Free Multigrain Cookies"];
@@ -56,18 +56,18 @@ function loadMenu() {
 	const pastry = ["Blackforest Egg Pastry", "Red Velvet Pastry", "Kshanji Pastry", "Fantasy Pastry", "Belgium Chocolate Pastry", "Truffle Eggless Pastry", "Chocolate Eggless Pastry", "Pineapple Egg Pastry"];
 	const menuDiv = document.querySelector("#menu");
 	let activeMenu = document.querySelectorAll("#cat-bar img")[0];
-	for(let i = 0 ; i < menu.length ; i++) {
+	for (let i = 0; i < menu.length; i++) {
 		const catDiv = document.createElement("div");
 		catDiv.className = "cat-container hide";
 		catDiv.id = menu[i];
 		menuDiv.appendChild(catDiv);
-		for(let j = 0 ; j < 8 ; j++) {
+		for (let j = 0; j < 8; j++) {
 			const newDiv = document.createElement("div");
 			const img = document.createElement("img");
 			const name = document.createElement("p");
 			name.innerText = eval(`${menu[i]}[j]`);;
-			img.src = `./images/products/${menu[i]}/${j+1}.jpg`;
-			newDiv.className = "item-card small roboto";
+			img.src = `./images/products/${menu[i]}/${j + 1}.jpg`;
+			newDiv.className = "item-card vsmall roboto";
 			newDiv.appendChild(img);
 			newDiv.appendChild(name);
 			catDiv.appendChild(newDiv);
@@ -78,7 +78,7 @@ function loadMenu() {
 	let currentCat = "cake";
 	document.querySelector("#cat-bar").addEventListener("click", (e) => {
 		const pattern = new RegExp(/(\w+).png/g);
-		if(e.target.src) {
+		if (e.target.src) {
 			activeMenu.classList.remove("active");
 			activeMenu = e.target;
 			activeMenu.classList.add("active");
@@ -97,10 +97,9 @@ function validate() {
 	new Array(signUpForm).forEach(x => x.addEventListener("keyup", e => testValue(e)));
 	new Array(signUpForm).forEach(x => x.addEventListener("blur", e => testValue(e)));
 	signUpForm.dob.addEventListener("change", e => testValue(e));
-	signUpForm.addEventListener("submit", (e) => {
+	document.querySelector("#submit").addEventListener("click", (e) => {
 		e.preventDefault();
-		testValues();
-		new Array(signUpForm).filter(x => x.classList.contains("error")).length > 0? alert("Invalid Details") : alert("Sign Up Successful");
+		!testValues() ? alert("Invalid Details") : alert("Sign Up Successful");
 	});
 
 	const usernameCritera = new RegExp(/^[a-zA-Z][a-zA-Z0-9_\.]{7,}$/);
@@ -109,7 +108,7 @@ function validate() {
 	const today = new Date();
 
 	function testValue(e) {
-		switch(e.target.name) {
+		switch (e.target.name) {
 			case "username":
 				test(testName, e.target); break;
 			case "password":
@@ -124,21 +123,28 @@ function validate() {
 	}
 
 	function testValues() {
-		test(testName, signUpForm.username); 
-		test(testPass, signUpForm.password); 
-		test(testRetype, signUpForm.retypePassword); 
-		test(testMail, signUpForm.email); 
-		test(testDob, signUpForm.dob); 
+		let testRet = true;
+		testRet &= test(testName, signUpForm.username);
+		testRet &= test(testPass, signUpForm.password);
+		testRet &= test(testRetype, signUpForm.retypePassword);
+		testRet &= test(testMail, signUpForm.email);
+		testRet &= test(testDob, signUpForm.dob);
+		return testRet;
 	}
 
 	function testName(v) { return usernameCritera.test(v); }
 	function testPass(v) { return passwordCritera.test(v); }
 	function testRetype(v) { return (testPass(v) && signUpForm.password.value === v); }
-	function testMail(v) { return email.test(v)}
+	function testMail(v) { return email.test(v) }
 	function testDob(v) { return (Math.abs(today.getFullYear() - new Date(v).getFullYear()) > 12); }
 
 	function test(func, target) {
-		if(func(target.value)) target.classList.remove("error");
-		else target.classList.add("error");
+		if (func(target.value)) {
+			target.classList.remove("error");
+			return true;
+		} else {
+			target.classList.add("error");
+			return false;
+		}
 	}
 }
