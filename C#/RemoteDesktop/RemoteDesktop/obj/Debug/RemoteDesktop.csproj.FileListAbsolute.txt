@@ -1,0 +1,12 @@
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\bin\Debug\RemoteDesktop.exe.config
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\bin\Debug\RemoteDesktop.exe
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\bin\Debug\RemoteDesktop.pdb
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\bin\Debug\AxInterop.MSTSCLib.dll
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.csprojAssemblyReference.cache
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.frmMain.resources
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.Properties.Resources.resources
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.GenerateResource.cache
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.CoreCompileInputs.cache
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.csproj.CopyComplete
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.exe
+C:\Users\CHIRAG\source\repos\RemoteDesktop\RemoteDesktop\obj\Debug\RemoteDesktop.pdb

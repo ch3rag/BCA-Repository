@@ -1,0 +1,18 @@
+c:\users\chirag\documents\visual studio 2012\Projects\AI\AI\bin\Debug\AI.exe.config
+C:\Users\CHIRAG\Documents\Visual Studio 2012\Projects\AI\AI\obj\Debug\AI.csprojResolveAssemblyReference.cache
+C:\Users\CHIRAG\Documents\Visual Studio 2012\Projects\AI\AI\bin\Debug\AI.exe
+C:\Users\CHIRAG\Documents\Visual Studio 2012\Projects\AI\AI\bin\Debug\AI.pdb
+C:\Users\CHIRAG\Documents\Visual Studio 2012\Projects\AI\AI\obj\Debug\AI.exe
+C:\Users\CHIRAG\Documents\Visual Studio 2012\Projects\AI\AI\obj\Debug\AI.pdb
+E:\College\AI\AI\bin\Debug\AI.exe.config
+E:\College\AI\AI\obj\Debug\AI.exe
+E:\College\AI\AI\obj\Debug\AI.pdb
+E:\College\AI\AI\obj\Debug\AI.csprojResolveAssemblyReference.cache
+E:\College\AI\AI\bin\Debug\AI.exe
+E:\College\AI\AI\bin\Debug\AI.pdb
+D:\AI\AI\bin\Debug\AI.exe.config
+D:\AI\AI\obj\Debug\AI.exe
+D:\AI\AI\obj\Debug\AI.pdb
+D:\AI\AI\obj\Debug\AI.csprojResolveAssemblyReference.cache
+D:\AI\AI\bin\Debug\AI.exe
+D:\AI\AI\bin\Debug\AI.pdb

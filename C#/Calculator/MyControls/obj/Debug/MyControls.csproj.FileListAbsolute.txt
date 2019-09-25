@@ -1,0 +1,6 @@
+C:\Users\CHIRAG\source\repos\Calculator\MyControls\bin\Debug\MyControls.dll
+C:\Users\CHIRAG\source\repos\Calculator\MyControls\bin\Debug\MyControls.pdb
+C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.csprojAssemblyReference.cache
+C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.csproj.CoreCompileInputs.cache
+C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.dll
+C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.pdb

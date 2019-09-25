@@ -1,0 +1,17 @@
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\MyWordPad.exe.config
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\MyWordPad.exe
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\MyWordPad.pdb
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.csprojAssemblyReference.cache
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.Properties.Resources.resources
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.csproj.GenerateResource.cache
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.csproj.CoreCompileInputs.cache
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.exe
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.pdb
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.frmMain.resources
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\Icons\leftAlign.png
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\Icons\centerAlign.png
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\Icons\rightAlign.png
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\Icons\bullet.png
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\Icons\decreaseIndent.png
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\bin\Debug\Icons\increaseIndent.png
+C:\Users\CHIRAG\source\repos\MyWordPad\MyWordPad\obj\Debug\MyWordPad.frmfindAndReplaceForm.resources

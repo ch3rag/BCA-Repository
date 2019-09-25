@@ -1,0 +1,16 @@
+c:\users\npgc\documents\visual studio 2010\Projects\MyFontDialogBox\MyFontDialogBox\bin\Debug\MyFontDialogBox.exe
+c:\users\npgc\documents\visual studio 2010\Projects\MyFontDialogBox\MyFontDialogBox\bin\Debug\MyFontDialogBox.pdb
+c:\users\npgc\documents\visual studio 2010\Projects\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.frmMain.resources
+c:\users\npgc\documents\visual studio 2010\Projects\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.Properties.Resources.resources
+c:\users\npgc\documents\visual studio 2010\Projects\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.csproj.GenerateResource.Cache
+c:\users\npgc\documents\visual studio 2010\Projects\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.exe
+c:\users\npgc\documents\visual studio 2010\Projects\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.pdb
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\bin\Debug\MyFontDialogBox.exe
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\bin\Debug\MyFontDialogBox.pdb
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.csprojAssemblyReference.cache
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.frmMain.resources
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.Properties.Resources.resources
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.csproj.GenerateResource.cache
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.csproj.CoreCompileInputs.cache
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.exe
+D:\Study\Github\bca-repository\C#\MyFontDialogBox\MyFontDialogBox\obj\x86\Debug\MyFontDialogBox.pdb

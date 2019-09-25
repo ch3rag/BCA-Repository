@@ -1,0 +1,15 @@
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.csprojAssemblyReference.cache
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.frmMain.resources
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.Properties.Resources.resources
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.csproj.GenerateResource.cache
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.csproj.CoreCompileInputs.cache
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.exe.config
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.exe
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.pdb
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\bin\Debug\MyControls.dll
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\bin\Debug\MyControls.pdb
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.csproj.CopyComplete
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.exe
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\obj\Debug\FacebookLogin.pdb
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\bin\Debug\Images\bg.png
+C:\Users\CHIRAG\source\repos\FacebookLogin\FacebookLogin\bin\Debug\Database\Facebook.accdb

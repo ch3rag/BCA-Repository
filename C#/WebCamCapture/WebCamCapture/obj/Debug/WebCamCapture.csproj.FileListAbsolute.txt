@@ -1,0 +1,17 @@
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\WebCamCapture.exe.config
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\WebCamCapture.exe
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\WebCamCapture.pdb
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\AForge.dll
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\AForge.Video.DirectShow.dll
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\AForge.Video.dll
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.csprojAssemblyReference.cache
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.Properties.Resources.resources
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.csproj.GenerateResource.cache
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.csproj.CoreCompileInputs.cache
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.csproj.CopyComplete
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.exe
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.pdb
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\AForge.Controls.dll
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\AForge.Imaging.dll
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\bin\Debug\AForge.Math.dll
+C:\Users\CHIRAG\source\repos\WebCamCapture\WebCamCapture\obj\Debug\WebCamCapture.frmMain.resources
