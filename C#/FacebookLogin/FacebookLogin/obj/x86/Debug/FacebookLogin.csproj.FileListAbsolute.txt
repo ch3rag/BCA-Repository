@@ -1,0 +1,40 @@
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.frmMain.resources
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.Properties.Resources.resources
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csproj.GenerateResource.Cache
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csprojResolveAssemblyReference.cache
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.exe
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.pdb
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\bin\Debug\MyControls.dll
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\bin\Debug\MyControls.pdb
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.exe
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.pdb
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\bin\Debug\Database\Facebook.accdb
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\FacebookLogin\bin\Debug\Images\bg.png
+D:\FacebookLogin\FacebookLogin\bin\Debug\Database\Facebook.accdb
+D:\FacebookLogin\FacebookLogin\bin\Debug\Images\bg.png
+D:\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.exe
+D:\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.pdb
+D:\FacebookLogin\FacebookLogin\bin\Debug\MyControls.dll
+D:\FacebookLogin\FacebookLogin\bin\Debug\MyControls.pdb
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csprojAssemblyReference.cache
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.frmMain.resources
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.Properties.Resources.resources
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csproj.GenerateResource.cache
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csproj.CoreCompileInputs.cache
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csproj.CopyComplete
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.exe
+D:\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.pdb
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\bin\Debug\Database\Facebook.accdb
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\bin\Debug\Images\bg.png
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.exe
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\bin\Debug\FacebookLogin.pdb
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\bin\Debug\MyControls.dll
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\bin\Debug\MyControls.pdb
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csprojAssemblyReference.cache
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.frmMain.resources
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.Properties.Resources.resources
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csproj.GenerateResource.cache
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csproj.CoreCompileInputs.cache
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.csproj.CopyComplete
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.exe
+D:\Study\Github\bca-repository\C#\FacebookLogin\FacebookLogin\obj\x86\Debug\FacebookLogin.pdb

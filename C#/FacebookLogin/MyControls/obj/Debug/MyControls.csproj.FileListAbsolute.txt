@@ -1,0 +1,10 @@
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\MyControls\bin\Debug\MyControls.dll
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\MyControls\bin\Debug\MyControls.pdb
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\MyControls\obj\Debug\MyControls.dll
+c:\users\npgc\documents\visual studio 2010\Projects\FacebookLogin\MyControls\obj\Debug\MyControls.pdb
+D:\FacebookLogin\MyControls\bin\Debug\MyControls.dll
+D:\FacebookLogin\MyControls\bin\Debug\MyControls.pdb
+D:\FacebookLogin\MyControls\obj\Debug\MyControls.csprojAssemblyReference.cache
+D:\FacebookLogin\MyControls\obj\Debug\MyControls.csproj.CoreCompileInputs.cache
+D:\FacebookLogin\MyControls\obj\Debug\MyControls.dll
+D:\FacebookLogin\MyControls\obj\Debug\MyControls.pdb

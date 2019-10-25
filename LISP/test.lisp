@@ -1,0 +1,7 @@
+(defun talk()
+    (princ "What is your name?")
+    (setq name (read))
+    (format t "Hello ~a!, what is best friend's name? " name)
+    (setq friend (read))
+    (format t "Very interesting ~a is my best friend too." friend))
+(talk)

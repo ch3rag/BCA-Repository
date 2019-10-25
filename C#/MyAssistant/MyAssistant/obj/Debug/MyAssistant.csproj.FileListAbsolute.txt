@@ -1,0 +1,10 @@
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\bin\Debug\MyAssistant.exe.config
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\bin\Debug\MyAssistant.exe
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\bin\Debug\MyAssistant.pdb
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\obj\Debug\MyAssistant.csprojAssemblyReference.cache
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\obj\Debug\MyAssistant.frmMain.resources
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\obj\Debug\MyAssistant.Properties.Resources.resources
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\obj\Debug\MyAssistant.csproj.GenerateResource.cache
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\obj\Debug\MyAssistant.csproj.CoreCompileInputs.cache
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\obj\Debug\MyAssistant.exe
+C:\Users\CHIRAG\source\repos\MyAssistant\MyAssistant\obj\Debug\MyAssistant.pdb

@@ -1,0 +1,593 @@
+﻿<Window x:Class="MyImageProcessing.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:MyImageProcessing"
+        xmlns:myOp="clr-namespace:MyImageProcessing.ImageOperations"
+        xmlns:myCmd="clr-namespace:MyImageProcessing.Commands"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:m="clr-namespace:System.Windows.Media;assembly=PresentationCore"
+        xmlns:Sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Height="640" Title="Image Processing" Width="800" DataContext="{Binding ViewModel, RelativeSource={RelativeSource Self}}">
+
+    <Window.Resources>
+        <x:Array Type="{x:Type Sys:Int32}" x:Key="Strokes">
+            <Sys:Int32>0</Sys:Int32>
+            <Sys:Int32>1</Sys:Int32>
+            <Sys:Int32>2</Sys:Int32>
+            <Sys:Int32>3</Sys:Int32>
+            <Sys:Int32>4</Sys:Int32>
+            <Sys:Int32>5</Sys:Int32>
+            <Sys:Int32>6</Sys:Int32>
+            <Sys:Int32>7</Sys:Int32>
+            <Sys:Int32>8</Sys:Int32>
+            <Sys:Int32>9</Sys:Int32>
+            <Sys:Int32>10</Sys:Int32>
+        </x:Array>
+        
+        <x:Array Type="{x:Type Sys:Int32}" x:Key="FontSizes">
+            <Sys:Int32>8</Sys:Int32>
+            <Sys:Int32>10</Sys:Int32>
+            <Sys:Int32>12</Sys:Int32>
+            <Sys:Int32>14</Sys:Int32>
+            <Sys:Int32>16</Sys:Int32>
+            <Sys:Int32>18</Sys:Int32>
+            <Sys:Int32>20</Sys:Int32>
+            <Sys:Int32>24</Sys:Int32>
+            <Sys:Int32>28</Sys:Int32>
+            <Sys:Int32>30</Sys:Int32>
+            <Sys:Int32>32</Sys:Int32>
+            <Sys:Int32>36</Sys:Int32>
+            <Sys:Int32>40</Sys:Int32>
+        </x:Array>
+        <myCmd:DumbConvertor x:Key="MyConvertor"></myCmd:DumbConvertor>
+        <Style TargetType="{x:Type TextBox}">
+            <Style.Triggers>
+                <Trigger Property="Validation.HasError" Value="True">
+                    <Setter Property="Background" Value="Pink"></Setter>
+                    <Setter Property="Foreground" Value="Black"></Setter>
+                    <Setter Property="ToolTip" Value="{Binding RelativeSource={RelativeSource Self},  Path=(Validation.Errors)[0].ErrorContent}"></Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <ObjectDataProvider x:Key="fontFamilies" ObjectType="{x:Type m:Fonts}" MethodName="get_SystemFontFamilies"></ObjectDataProvider>
+    </Window.Resources>
+    <Window.InputBindings>
+        <KeyBinding Key="O" Modifiers="Ctrl" Command="{Binding FileOpenCommand}"></KeyBinding>
+        <KeyBinding Key="S" Modifiers="Ctrl" Command="{Binding FileSaveCommand}"></KeyBinding>
+        <KeyBinding Key="F12"   Command="{Binding FileSaveAsCommand}"></KeyBinding>
+        <KeyBinding Key="F4" Modifiers="Ctrl" Command="{Binding FileCloseCommand}"></KeyBinding>
+        <KeyBinding Key="P" Modifiers="Ctrl" Command="{Binding FilePrintCommand}"></KeyBinding>
+        <KeyBinding Key="Z" Modifiers="Ctrl" Command="{Binding OperationCommand}">
+            <KeyBinding.CommandParameter>
+                <MultiBinding Converter="{StaticResource MyConvertor}">
+                    <Binding Source="{x:Static myOp:OperationList.Undo}"></Binding>
+                    <Binding Source="{x:Null}"></Binding>
+                </MultiBinding>
+            </KeyBinding.CommandParameter>
+        </KeyBinding>
+
+        <KeyBinding Key="Y" Modifiers="Ctrl" Command="{Binding OperationCommand}">
+            <KeyBinding.CommandParameter>
+                <MultiBinding Converter="{StaticResource MyConvertor}">
+                    <Binding Source="{x:Static myOp:OperationList.Redo}"></Binding>
+                    <Binding Source="{x:Null}"></Binding>
+                </MultiBinding>
+            </KeyBinding.CommandParameter>
+        </KeyBinding>
+
+        <KeyBinding Key="R" Modifiers="Ctrl" Command="{Binding OperationCommand}">
+            <KeyBinding.CommandParameter>
+                <MultiBinding Converter="{StaticResource MyConvertor}">
+                    <Binding Source="{x:Static myOp:OperationList.Reset}"></Binding>
+                    <Binding Source="{x:Null}"></Binding>
+                </MultiBinding>
+            </KeyBinding.CommandParameter>
+        </KeyBinding>
+
+    </Window.InputBindings>
+
+    <DockPanel LastChildFill="True">
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="File">
+                <MenuItem Header="_Open Image" InputGestureText="Ctrl+O" Command="{Binding FileOpenCommand}"/>
+                <MenuItem Header="_Save" InputGestureText="Ctrl+S" Command="{Binding FileSaveCommand}"/>
+                <MenuItem Header="Save _As" InputGestureText="F12" Command="{Binding FileSaveAsCommand}"/>
+                <MenuItem Header="_Print" InputGestureText="Ctrl+P" Command="{Binding FilePrintCommand}"/>
+                <MenuItem Header="_Exit" InputGestureText="Alt+F4" Command="{Binding FileCloseCommand}"></MenuItem>
+            </MenuItem>
+            <MenuItem Header="_Edit">
+                <MenuItem x:Name="MnuResize" Header="Resize" IsCheckable="True"></MenuItem>
+                <MenuItem x:Name="MnuScale" Header="Scale" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Undo" Command="{Binding OperationCommand}" InputGestureText="Ctrl+Z">
+                    <MenuItem.CommandParameter>
+                        <MultiBinding Converter="{StaticResource MyConvertor}">
+                            <Binding Source="{x:Static myOp:OperationList.Undo}"></Binding>
+                            <Binding Source="{x:Null}"></Binding>
+                        </MultiBinding>
+                    </MenuItem.CommandParameter>
+                </MenuItem>
+                <MenuItem Header="Redo" Command="{Binding OperationCommand}" InputGestureText="Ctrl+Y">
+                    <MenuItem.CommandParameter>
+                        <MultiBinding Converter="{StaticResource MyConvertor}">
+                            <Binding Source="{x:Static myOp:OperationList.Redo}"></Binding>
+                            <Binding Source="{x:Null}"></Binding>
+                        </MultiBinding>
+                    </MenuItem.CommandParameter>
+                </MenuItem>
+                <MenuItem Header="Reset" Command="{Binding OperationCommand}" InputGestureText="Ctrl+R">
+                    <MenuItem.CommandParameter>
+                        <MultiBinding Converter="{StaticResource MyConvertor}">
+                            <Binding Source="{x:Static myOp:OperationList.Reset}"></Binding>
+                            <Binding Source="{x:Null}"></Binding>
+                        </MultiBinding>
+                    </MenuItem.CommandParameter>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Filter">
+                <MenuItem Header="Basic" IsCheckable="True" x:Name="MnuBasic"></MenuItem>
+                <MenuItem Header="Color">
+                    <MenuItem x:Name="MnuInvert" Header="Invert" IsCheckable="True"/>
+                    <MenuItem x:Name="MnuGrayScale"  Header="Grayscale" Command="{Binding OperationCommand}">
+                        <MenuItem.CommandParameter>
+                            <MultiBinding Converter="{StaticResource MyConvertor}">
+                                <Binding Source="{x:Static myOp:OperationList.GrayScale}"></Binding>
+                                <Binding Source="{x:Null}"></Binding>
+                            </MultiBinding>
+                        </MenuItem.CommandParameter>
+                    </MenuItem>
+                    <MenuItem x:Name="MnuExtractChannel" Header="Extract Channel" IsCheckable="True"></MenuItem>
+                    <MenuItem x:Name="MnuMonotone" Header="Monotone" IsCheckable="True"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Blur">
+                    <MenuItem x:Name="MnuBlur" Header="Blur" IsCheckable="True"></MenuItem>
+                    <MenuItem x:Name="MnuGaussianBlur" Header="Gaussian Blur" IsCheckable="True"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="Edge Detection" x:Name="MnuEdge" IsCheckable="True"></MenuItem>
+                <MenuItem Header="Emboss" Command="{Binding OperationCommand}">
+                    <MenuItem.CommandParameter>
+                        <MultiBinding Converter="{StaticResource MyConvertor}">
+                            <Binding Source="{x:Static myOp:OperationList.Emboss}"></Binding>
+                            <Binding Source="{x:Null}"></Binding>
+                        </MultiBinding>
+                    </MenuItem.CommandParameter>
+                </MenuItem>
+                <MenuItem x:Name="MnuSobel" Header="Sobel" IsCheckable="True"></MenuItem>
+            </MenuItem>
+        
+        </Menu>
+        <StackPanel DockPanel.Dock="Top" Background="WhiteSmoke" Orientation="Horizontal">
+            
+            <TextBlock Text="Font:" VerticalAlignment="Center" Margin="10, 0, 0, 0"></TextBlock>
+            <ComboBox ItemsSource="{Binding Source={StaticResource fontFamilies}}" Width="100" Margin="10" SelectedItem="{Binding CurrentImageContainer.Image.FontFamily}"></ComboBox>
+            <TextBlock Text="Size:" VerticalAlignment="Center"></TextBlock>
+            <ComboBox  Width="50" Margin="10" ItemsSource="{Binding Source={StaticResource FontSizes}}"  SelectedItem="{Binding CurrentImageContainer.Image.FontSize}"> </ComboBox>
+            <ToggleButton Content="B" Style="{StaticResource ToolBarToggleButtonStyle}" FontWeight="Bold" IsChecked="{Binding CurrentImageContainer.Image.FontBold}"></ToggleButton>
+            <ToggleButton Content="I" Style="{StaticResource ToolBarToggleButtonStyle}" FontStyle="Italic" IsChecked="{Binding CurrentImageContainer.Image.FontItalic}"></ToggleButton>
+            <ToggleButton Style="{StaticResource ToolBarToggleButtonStyle}" IsChecked="{Binding CurrentImageContainer.Image.FontUnderline}">
+                <TextBlock Text="U" TextDecorations="Underline"> </TextBlock>
+            </ToggleButton>
+            <Line Style="{StaticResource LineSeperatorVertical}"></Line>
+            <TextBlock Text="Stroke:" VerticalAlignment="Center" ></TextBlock>
+            <xctk:ColorPicker DropDownBackground="WhiteSmoke" Width="100" VerticalAlignment="Center" Margin="10, 0, 10, 0" SelectedColor="{Binding CurrentImageContainer.Image.Stroke}"></xctk:ColorPicker>
+            <TextBlock Text="Fill:" VerticalAlignment="Center" ></TextBlock>
+            <xctk:ColorPicker DropDownBackground="WhiteSmoke" Width="100" VerticalAlignment="Center" Margin="10, 0, 10, 0" SelectedColor="{Binding CurrentImageContainer.Image.Fill}"></xctk:ColorPicker>
+            <TextBlock Text="Stroke Width:" VerticalAlignment="Center" ></TextBlock>
+            <ComboBox  Width="50" Margin="10" ItemsSource="{Binding Source={StaticResource Strokes}}" SelectedItem="{Binding CurrentImageContainer.Image.StrokeWidth}"></ComboBox>
+        </StackPanel>
+        <StackPanel DockPanel.Dock="Left" Orientation="Vertical" Height="Auto" Background="WhiteSmoke">
+            <Button Content="{StaticResource RotateLeft}" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.RotateLeft}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="{StaticResource RotateRight}" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.RotateRight}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="{StaticResource FlipHorizontalImage}" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.FlipHorizontal}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Content="{StaticResource FlipVerticalImage}" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.FlipVertical}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Line Style="{StaticResource LineSeperator}"></Line>
+            <ToggleButton Content="{StaticResource Select}" Style="{StaticResource ToolBarToggleButtonStyle}" IsChecked="{Binding CurrentImageContainer.Image.IsSelectToolEnabled}" IsEnabled="{Binding IsContainerNotNull}"></ToggleButton>
+            <Button Content="{StaticResource Crop}" Style="{StaticResource ToolBarButtonStyle}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.Crop}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Line Style="{StaticResource LineSeperator}"></Line>
+            <ToggleButton Content="{StaticResource Text}" Style="{StaticResource ToolBarToggleButtonStyle}" IsChecked="{Binding CurrentImageContainer.Image.IsTextToolEnabled}" IsEnabled="{Binding IsContainerNotNull}" ></ToggleButton>
+            <ToggleButton Content="{StaticResource Line}" Style="{StaticResource ToolBarToggleButtonStyle}"  IsEnabled="{Binding IsContainerNotNull}"  IsChecked="{Binding CurrentImageContainer.Image.IsLineToolEnabled}"></ToggleButton>
+            <ToggleButton Content="{StaticResource Rectangle}" Style="{StaticResource ToolBarToggleButtonStyle}"  IsEnabled="{Binding IsContainerNotNull}"   IsChecked="{Binding CurrentImageContainer.Image.IsRectangleToolEnabled}"></ToggleButton>
+            <ToggleButton Content="{StaticResource Circle}" Style="{StaticResource ToolBarToggleButtonStyle}"  IsEnabled="{Binding IsContainerNotNull}"  IsChecked="{Binding CurrentImageContainer.Image.IsCircleToolEnabled}" ></ToggleButton>
+            <Line Style="{StaticResource LineSeperator}"></Line>
+            <ToggleButton Content="{StaticResource Paint}" Style="{StaticResource ToolBarToggleButtonStyle}"  IsEnabled="{Binding IsContainerNotNull}" IsChecked="{Binding CurrentImageContainer.Image.IsPaintToolEnabled}" ></ToggleButton>
+            <ToggleButton Content="{StaticResource Dropper}" Style="{StaticResource ToolBarToggleButtonStyle}"  IsEnabled="{Binding IsContainerNotNull}" IsChecked="{Binding CurrentImageContainer.Image.IsDropperToolEnabled}"></ToggleButton>
+            <Line Style="{StaticResource LineSeperator}"></Line>
+            <Button Style="{StaticResource ToolBarButtonStyle}" Content="{StaticResource Undo}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.Undo}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Style="{StaticResource ToolBarButtonStyle}" Content="{StaticResource Redo}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.Redo}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+            <Button Style="{StaticResource ToolBarButtonStyle}" Content="{StaticResource Reset}" Command="{Binding OperationCommand}">
+                <Button.CommandParameter>
+                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                        <Binding Source="{x:Static myOp:OperationList.Reset}"></Binding>
+                        <Binding Source="{x:Null}"></Binding>
+                    </MultiBinding>
+                </Button.CommandParameter>
+            </Button>
+
+        </StackPanel>
+
+        <StatusBar DockPanel.Dock="Bottom" Background="WhiteSmoke">
+            <StatusBarItem>
+                <Slider x:Name="ZoomLevel" 
+                    Orientation="Horizontal" 
+                    Maximum="{Binding CurrentImageContainer.MaxZoomLevel}" 
+                    Minimum="{Binding CurrentImageContainer.MinZoomLevel}" 
+                    Value="{Binding CurrentImageContainer.ZoomLevel}" 
+                    IsEnabled="{Binding IsContainerNotNull}"
+                    Width="200" Margin="5, 3, 5, 3">
+                </Slider>
+            </StatusBarItem>
+            <StatusBarItem>
+                <Label Content="{Binding Value, ElementName=ZoomLevel}" ContentStringFormat="Zoom: {0:F0}% " Width="Auto"/>
+            </StatusBarItem>
+            <StatusBarItem HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal" Width="Auto">
+                    <Label Width="Auto" ContentStringFormat="Width: {0:F0}px" Content="{Binding CurrentImageContainer.Image.Height}"></Label>
+                    <Label Width="Auto" ContentStringFormat="Height: {0:F0}px" Content="{Binding CurrentImageContainer.Image.Width}"></Label>
+                </StackPanel>
+            </StatusBarItem>
+        </StatusBar>
+        <!-- EXPANDER PANEL -->
+        <Expander Style="{StaticResource MyExpander}" DockPanel.Dock="Right" ExpandDirection="Right">
+            <ScrollViewer>
+                <StackPanel CanVerticallyScroll="True">
+                    <Expander x:Name="ExpdResize" Header="Resize">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                    <RowDefinition Height="10"></RowDefinition>
+                                    <RowDefinition Height="Auto"></RowDefinition>
+                                </Grid.RowDefinitions>
+                                <Label Content="Width:" Grid.Column="0"></Label>
+                                <TextBox Name="txtResizeWidth" Grid.Column="1" Text="{Binding Path=CurrentImageContainer.Image.ResizeWidth,  ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                                <Label Content="px" Grid.Column="2"></Label>
+                                <Label Content="Height:" Grid.Row="2" Grid.Column="0"></Label>
+                                <TextBox Name="txtResizeHeight" Grid.Row="2" Grid.Column="1" Text="{Binding Path=CurrentImageContainer.Image.ResizeHeight, ValidatesOnDataErrors=True,  UpdateSourceTrigger=PropertyChanged}">
+                                </TextBox>
+                                <Label Content="px" Grid.Row="2" Grid.Column="2"></Label>
+                            </Grid>
+                            <Button Content="Apply" Width="100" Margin="0, 5, 0, 0" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding Source="{x:Static myOp:OperationList.Resize}"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="IsEnabled" Value="False"></Setter>
+                                        <Style.Triggers>
+                                            <MultiDataTrigger>
+                                                <MultiDataTrigger.Conditions>
+                                                    <Condition Binding="{Binding ElementName=txtResizeWidth, Path=(Validation.HasError)}" Value="False"></Condition>
+                                                    <Condition Binding="{Binding ElementName=txtResizeHeight, Path=(Validation.HasError)}" Value="False"></Condition>
+                                                </MultiDataTrigger.Conditions>
+                                                <Setter Property="IsEnabled" Value="True"></Setter>
+                                            </MultiDataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuResize, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="ExpdScale" Header="Scale">
+                        <StackPanel>
+                                <Label Content="Scale %:"></Label>
+                            <TextBox Name="txtScale" Grid.Column="1" Text="{Binding Path=CurrentImageContainer.Image.ResizeScale,  ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged}"></TextBox>
+                            <Button Content="Apply" Width="100" Margin="0, 5, 0, 0" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding Source="{x:Static myOp:OperationList.Scale}"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Setter Property="IsEnabled" Value="False"></Setter>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=txtScale, Path=(Validation.HasError)}" Value="False">
+                                                <Setter Property="IsEnabled" Value="True"></Setter>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuScale, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="ExpdGaussianBlur" Header="Gaussian Blur">
+                        <StackPanel>
+                            <Label Content="{Binding Value, ElementName=SldrGaussianBlur}" ContentStringFormat="Amount: {0:F0}"></Label>
+                            <Slider Orientation="Horizontal" Name="SldrGaussianBlur" Minimum="1" Maximum="29" TickPlacement="BottomRight" IsSnapToTickEnabled="True" TickFrequency="2" Margin="0, 0, 0, 5"></Slider>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding Source="{x:Static myOp:OperationList.GaussianBlur}"></Binding>
+                                        <Binding ElementName="SldrGaussianBlur" Path="Value"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuGaussianBlur, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="ExpEdgeDetection" Header="EdgeDetection">
+                        <StackPanel>
+                            <Label Content="{Binding Value, ElementName=SldrEdgeThreshold}" ContentStringFormat="Threshold: {0:F0}"></Label>
+                            <Slider Orientation="Horizontal" Name="SldrEdgeThreshold" Minimum="0" Maximum="10" TickPlacement="BottomRight" IsSnapToTickEnabled="True" TickFrequency="1" Margin="0, 0, 0, 5"></Slider>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding Source="{x:Static myOp:OperationList.EdgeDetection}"></Binding>
+                                        <Binding ElementName="SldrEdgeThreshold" Path="Value"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>   
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuEdge, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="ExpdMonotone" Header="Monotone">
+                        <StackPanel>
+                            <Label Content="Color"></Label>
+                            <xctk:ColorPicker x:Name="ClrMono" DropDownBackground="WhiteSmoke" SelectedColor="Transparent"></xctk:ColorPicker>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding Source="{x:Static myOp:OperationList.Monotone}"></Binding>
+                                        <Binding ElementName="ClrMono" Path="SelectedColor"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuMonotone, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="BlurPanel" Header="Blur">
+                        <StackPanel>
+                            <Label Content="{Binding Value, ElementName=SldrHorizontalBlur}" ContentStringFormat="Horizontal: {0:F0}"></Label>
+                            <Slider Orientation="Horizontal" Name="SldrHorizontalBlur" Minimum="1" Maximum="30" TickPlacement="BottomRight" IsSnapToTickEnabled="True" TickFrequency="2" Margin="0, 0, 0, 5"></Slider>
+                            <Label Content="{Binding Value, ElementName=SldrVerticalBlur}" ContentStringFormat="Vertical: {0:F0}"></Label>
+                            <Slider Orientation="Horizontal" Name="SldrVerticalBlur" Minimum="1" Maximum="30" TickPlacement="BottomRight" IsSnapToTickEnabled="True" TickFrequency="2" Margin="0, 0, 0, 5"></Slider>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding Source="{x:Static myOp:OperationList.Blur}"></Binding>
+                                        <Binding ElementName="SldrHorizontalBlur" Path="Value"></Binding>
+                                        <Binding ElementName="SldrVerticalBlur" Path="Value"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuBlur, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander Header="Basic Filters">
+                        <StackPanel>
+                            <Label  Content="{Binding ElementName=SldrBrightness, Path=Value}" ContentStringFormat="Brightness: {0:F0}"></Label>
+                            <Slider Orientation="Horizontal" Value="0" Name="SldrBrightness" Minimum="-127" Maximum="127" Margin="0, 0, 0, 5"></Slider>
+                            <Label  Content="{Binding ElementName=SldrContrast, Path=Value}" ContentStringFormat="Contrast: {0:F0}"></Label>
+                            <Slider Orientation="Horizontal" Value="0" Name="SldrContrast" Minimum="-127" Maximum="127" Margin="0, 0, 0, 5"></Slider>
+                            <Label  Content="{Binding ElementName=SldrSharpness, Path=Value}" ContentStringFormat="Sharpness: {0:F0}"></Label>
+                            <Slider Orientation="Horizontal" Value="0" Name="SldrSharpness" Minimum="0" Maximum="10" IsSnapToTickEnabled="True" TickFrequency="1" Margin="0, 0, 0, 5"></Slider>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding Source="{x:Static myOp:OperationList.Basic}"></Binding>
+                                        <Binding ElementName="SldrBrightness" Path="Value"></Binding>
+                                        <Binding ElementName="SldrContrast" Path="Value"></Binding>
+                                        <Binding ElementName="SldrSharpness" Path="Value"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuBasic, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="InvertPanel" Header="Inversion">
+                        <StackPanel>
+                            <Label Content="Invert Channels:"/>
+                            <ComboBox x:Name="cmbInversion" SelectedIndex="0">
+                                <ComboBoxItem Content="No Inversion" Tag="{Binding Source={x:Static myOp:OperationList.None}}"/>
+                                <ComboBoxItem Content="Red And Blue" Tag="{Binding Source={x:Static myOp:OperationList.InvertRedBlue}}"/>
+                                <ComboBoxItem Content="Red And Green" Tag="{Binding Source={x:Static myOp:OperationList.InvertRedGreen}}"/>
+                                <ComboBoxItem Content="Blue And Green" Tag="{Binding Source={x:Static myOp:OperationList.InvertBlueGreen}}"/>
+                                <ComboBoxItem Content="Invert Hue" Tag="{Binding Source={x:Static myOp:OperationList.InvertHue}}"></ComboBoxItem>
+                                <ComboBoxItem Content="Invert Lightness" Tag="{Binding Source={x:Static myOp:OperationList.InvertBrightness}}"></ComboBoxItem>
+                            </ComboBox>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding ElementName="cmbInversion" Path="SelectedItem.Tag"></Binding>
+                                        <Binding Source="{x:Null}"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuInvert, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="SobelPanel" Header="Sobel">
+                        <StackPanel>
+                            <Label Content="Direction:"/>
+                            <ComboBox x:Name="cmbDirection" SelectedIndex="0">
+                                <ComboBoxItem Content="None" Tag="{Binding Source={x:Static myOp:OperationList.None}}"/>
+                                <ComboBoxItem Content="Top" Tag="{Binding Source={x:Static myOp:OperationList.TopSobel}}"/>
+                                <ComboBoxItem Content="Bottom" Tag="{Binding Source={x:Static myOp:OperationList.BottomSobel}}"/>
+                                <ComboBoxItem Content="Left" Tag="{Binding Source={x:Static myOp:OperationList.LeftSobel}}"/>
+                                <ComboBoxItem Content="Right" Tag="{Binding Source={x:Static myOp:OperationList.RightSobel}}"></ComboBoxItem>
+                            </ComboBox>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding ElementName="cmbDirection" Path="SelectedItem.Tag"></Binding>
+                                        <Binding Source="{x:Null}"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuSobel, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="ExtractChannelPanel" Header="Extract Channel">
+                        <StackPanel>
+                            <Label Content="Channel:"/>
+                            <ComboBox x:Name="cmbExtract" SelectedIndex="0">
+                                <ComboBoxItem Content="None" Tag="{Binding Source={x:Static myOp:OperationList.None}}"/>
+                                <ComboBoxItem Content="Red" Tag="{Binding Source={x:Static myOp:OperationList.ExtractChannelRed}}"/>
+                                <ComboBoxItem Content="Green" Tag="{Binding Source={x:Static myOp:OperationList.ExtractChannelGreen}}"/>
+                                <ComboBoxItem Content="Blue" Tag="{Binding Source={x:Static myOp:OperationList.ExtractChannelBlue}}"/>
+                            </ComboBox>
+                            <Button Content="Apply" Command="{Binding OperationCommand}">
+                                <Button.CommandParameter>
+                                    <MultiBinding Converter="{StaticResource MyConvertor}">
+                                        <Binding ElementName="cmbExtract" Path="SelectedItem.Tag"></Binding>
+                                        <Binding Source="{x:Null}"></Binding>
+                                    </MultiBinding>
+                                </Button.CommandParameter>
+                            </Button>
+                        </StackPanel>
+                        <Expander.Style>
+                            <Style TargetType="{x:Type Expander}" BasedOn="{StaticResource PanelExpander}">
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=MnuExtractChannel, Path=IsChecked}" Value="False">
+                                        <Setter Property="Visibility" Value="Collapsed"></Setter>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Expander.Style>
+                    </Expander>
+                    <Expander x:Name="HistoryPanel" Header="History" Style="{DynamicResource PanelExpander}">
+                        <ListBox x:Name ="lstHistory" Height="150" ItemsSource="{Binding CurrentImageContainer.Image.History}" SelectedIndex="{Binding CurrentImageContainer.Image.HistoryIndex}"></ListBox>
+                    </Expander>
+                </StackPanel>
+            </ScrollViewer>
+        </Expander>
+        
+        <!--EXPANDER PANEL -->
+        <TabControl x:Name="ImageTabControl" Padding="0" Background="DimGray" ItemsSource="{Binding ImageContainers}">
+        </TabControl>
+        
+    </DockPanel>
+</Window>
