@@ -1,0 +1,1 @@
+### Goto BASH repository for notes.
