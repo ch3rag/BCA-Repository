@@ -1,12 +1,19 @@
-// CHIRAG SINGH RAJPUT
-// CLASSIC SNAKE GAME
+/***********************************************************************
+*                     Author: Bharat Singh Rajput                      *
+*               Last Updated: September 9, 2020 03:46 PM               *
+*                      File Name: ClassicSnake.c                       *
+*                          Source Language: c                          *
+*       Repository: http://github.com/ch3rag/bca-repository.git        *
+*                                                                      *
+*                       --- Code Description ---                       *
+*                          Classic Snake Game                          *
+***********************************************************************/
 
-
-#include <iostream> 
-#include <conio.h > 
-#include <graphics.h > 
-#include <cstdlib> 
-#include <dos.h> 
+#include <iostream>
+#include <conio.h >
+#include <graphics.h >
+#include <cstdlib>
+#include <dos.h>
 #include <time.h>
 
 class Map {
