@@ -1,13 +1,13 @@
 /***********************************************************************
- *                     Author: Bharat Singh Rajput                      *
- *               Last Updated: September 9, 2020 01:40 PM               *
- *                       File Name: Pendulum.cpp                        *
- *                         Source Language: cpp                         *
- *       Repository: http://github.com/ch3rag/bca-repository.git        *
- *                                                                      *
- *                       --- Code Description ---                       *
- *                          Pendulum Simulator                          *
- ***********************************************************************/
+*                     Author: Bharat Singh Rajput                      *
+*               Last Updated: September 9, 2020 01:40 PM               *
+*                       File Name: Pendulum.cpp                        *
+*                         Source Language: cpp                         *
+*       Repository: http://github.com/ch3rag/bca-repository.git        *
+*                                                                      *
+*                       --- Code Description ---                       *
+*                          Pendulum Simulator                          *
+***********************************************************************/
 
 #include <graphics.h>
 #include <iostream>

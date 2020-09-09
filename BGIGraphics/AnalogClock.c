@@ -1,3 +1,13 @@
+/***********************************************************************
+*                     Author: Bharat Singh Rajput                      *
+*               Last Updated: September 9, 2020 09:08 PM               *
+*                       File Name: AnalogClock.c                       *
+*                          Source Language: c                          *
+*       Repository: http://github.com/ch3rag/bca-repository.git        *
+*                                                                      *
+*                       --- Code Description ---                       *
+*                             Analog Clock                             *
+***********************************************************************/
 
 #include <stdio.h>
 #include <conio.h>

@@ -1,13 +1,13 @@
 /***********************************************************************
- *                     Author: Bharat Singh Rajput                      *
- *               Last Updated: September 9, 2020 01:42 PM               *
- *                    File Name: Recursive Carpet.C                     *
- *                          Source Language: c                          *
- *       Repository: http://github.com/ch3rag/bca-repository.git        *
- *                                                                      *
- *                       --- Code Description ---                       *
- *                     Cool Recusive Carpet Pattern                     *
- ***********************************************************************/
+*                     Author: Bharat Singh Rajput                      *
+*               Last Updated: September 9, 2020 01:42 PM               *
+*                    File Name: Recursive Carpet.C                     *
+*                          Source Language: c                          *
+*       Repository: http://github.com/ch3rag/bca-repository.git        *
+*                                                                      *
+*                       --- Code Description ---                       *
+*                     Cool Recusive Carpet Pattern                     *
+***********************************************************************/
 
 #include <stdio.h>
 #include <conio.h>

@@ -1,13 +1,13 @@
 /***********************************************************************
- *                     Author: Bharat Singh Rajput                      *
- *               Last Updated: September 9, 2020 01:39 PM               *
- *                     File Name: MadelBrotSet.cpp                      *
- *                         Source Language: cpp                         *
- *       Repository: http://github.com/ch3rag/bca-repository.git        *
- *                                                                      *
- *                       --- Code Description ---                       *
- *                            Mandelbrot Set                            *
- ***********************************************************************/
+*                     Author: Bharat Singh Rajput                      *
+*               Last Updated: September 9, 2020 01:39 PM               *
+*                     File Name: MadelBrotSet.cpp                      *
+*                         Source Language: cpp                         *
+*       Repository: http://github.com/ch3rag/bca-repository.git        *
+*                                                                      *
+*                       --- Code Description ---                       *
+*                            Mandelbrot Set                            *
+***********************************************************************/
 
 #include <conio.h>
 #include <graphics.h>
