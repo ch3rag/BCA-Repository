@@ -1,13 +1,13 @@
 /***********************************************************************
- *                     Author: Bharat Singh Rajput                      *
- *               Last Updated: September 9, 2020 01:57 PM               *
- *                   File Name: ArmstrongGenerator.c                    *
- *                          Source Language: c                          *
- *       Repository: http://github.com/ch3rag/bca-repository.git        *
- *                                                                      *
- *                       --- Code Description ---                       *
- *                 Armstrong  Numbers From 0 To 10,000                  *
- ***********************************************************************/
+*                     Author: Bharat Singh Rajput                      *
+*               Last Updated: September 9, 2020 01:57 PM               *
+*                   File Name: ArmstrongGenerator.c                    *
+*                          Source Language: c                          *
+*       Repository: http://github.com/ch3rag/bca-repository.git        *
+*                                                                      *
+*                       --- Code Description ---                       *
+*                 Armstrong  Numbers From 0 To 10,000                  *
+***********************************************************************/
 
 #include <stdio.h>
 #include <math.h>

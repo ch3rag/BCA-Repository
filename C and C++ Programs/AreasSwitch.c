@@ -1,13 +1,13 @@
 /***********************************************************************
- *                     Author: Bharat Singh Rajput                      *
- *               Last Updated: September 9, 2020 01:51 PM               *
- *                       File Name: AreasSwitch.c                       *
- *                          Source Language: c                          *
- *       Repository: http://github.com/ch3rag/bca-repository.git        *
- *                                                                      *
- *                       --- Code Description ---                       *
- *       Areas Of Circle, Cylinder And Triangle Using Switch Case       *
- ***********************************************************************/
+*                     Author: Bharat Singh Rajput                      *
+*               Last Updated: September 9, 2020 01:51 PM               *
+*                       File Name: AreasSwitch.c                       *
+*                          Source Language: c                          *
+*       Repository: http://github.com/ch3rag/bca-repository.git        *
+*                                                                      *
+*                       --- Code Description ---                       *
+*       Areas Of Circle, Cylinder And Triangle Using Switch Case       *
+***********************************************************************/
 
 #include <stdio.h>
 
