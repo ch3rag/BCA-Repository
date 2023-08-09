@@ -60,3 +60,5 @@ C:\Users\CHIRAG\source\repos\MyImageProcessing\MyImageProcessing\bin\Debug\sv\Xc
 C:\Users\CHIRAG\source\repos\MyImageProcessing\MyImageProcessing\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Users\CHIRAG\source\repos\MyImageProcessing\MyImageProcessing\obj\Debug\Windows\PrintWindow.g.cs
 C:\Users\CHIRAG\source\repos\MyImageProcessing\MyImageProcessing\obj\Debug\Windows\PrintWindow.baml
+D:\Github\Updated\bca-repository\C#\MyImageProcessing\MyImageProcessing\obj\Debug\MyImageProcessing.exe
+D:\Github\Updated\bca-repository\C#\MyImageProcessing\MyImageProcessing\obj\Debug\MyImageProcessing.pdb

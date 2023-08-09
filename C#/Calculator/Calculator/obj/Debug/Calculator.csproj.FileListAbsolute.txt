@@ -11,3 +11,14 @@ C:\Users\CHIRAG\source\repos\Calculator\Calculator\obj\Debug\Calculator.pdb
 C:\Users\CHIRAG\source\repos\Calculator\Calculator\bin\Debug\MyControls.dll
 C:\Users\CHIRAG\source\repos\Calculator\Calculator\bin\Debug\MyControls.pdb
 C:\Users\CHIRAG\source\repos\Calculator\Calculator\obj\Debug\Calculator.csproj.CopyComplete
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\bin\Debug\Calculator.exe.config
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\bin\Debug\MyControls.dll
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\bin\Debug\MyControls.pdb
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\obj\Debug\Calculator.frmMain.resources
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\obj\Debug\Calculator.exe
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\obj\Debug\Calculator.pdb
+D:\Github\Updated\bca-repository\C#\Calculator\Calculator\obj\Debug\Calculator.csprojResolveAssemblyReference.cache

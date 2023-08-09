@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing;
 using System.Drawing.Drawing2D;
+
 namespace MyControls {
     public class MyTableLayoutPanel : TableLayoutPanel {
         private bool isPainted;

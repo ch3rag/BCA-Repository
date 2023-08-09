@@ -4,3 +4,8 @@ C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.csprojAs
 C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.csproj.CoreCompileInputs.cache
 C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.dll
 C:\Users\CHIRAG\source\repos\Calculator\MyControls\obj\Debug\MyControls.pdb
+D:\Github\Updated\bca-repository\C#\Calculator\MyControls\bin\Debug\MyControls.dll
+D:\Github\Updated\bca-repository\C#\Calculator\MyControls\bin\Debug\MyControls.pdb
+D:\Github\Updated\bca-repository\C#\Calculator\MyControls\obj\Debug\MyControls.dll
+D:\Github\Updated\bca-repository\C#\Calculator\MyControls\obj\Debug\MyControls.pdb
+D:\Github\Updated\bca-repository\C#\Calculator\MyControls\obj\Debug\MyControls.csprojResolveAssemblyReference.cache
